@@ -7,18 +7,22 @@
 
     /* @ngInject */
     function appRun(routerHelper) {
-        var otherwise = '/404';
+        var otherwise = '/app/questions';
         routerHelper.configureStates(getStates(), otherwise);
     }
 
     function getStates() {
         return [
             {
-                state: 'questions',
+                state: 'app',
                 config: {
                     url: '/app',
-                    templateUrl: 'app/questions/questions.html',
-                    title: 'Survey Questions'
+                    views: {
+                        'app' : {
+                            templateUrl: 'app/layout/layout.html'
+                        }
+                    },
+                    title: 'Survey App'
                 }
             },
             {

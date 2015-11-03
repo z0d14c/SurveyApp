@@ -13,10 +13,14 @@
     function getStates() {
         return [
             {
-                state: 'questions',
+                state: 'app.questions',
                 config: {
-                    url: '/app/questions',
-                    templateUrl: 'app/questions/questions.html',
+                    url: '/questions',
+                    views: {
+                        '': {
+                            templateUrl: 'app/questions/questions.middle.html'
+                        }
+                    },
                     title: 'Survey Questions'
                 }
             }
